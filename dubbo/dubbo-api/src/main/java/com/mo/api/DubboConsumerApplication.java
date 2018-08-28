@@ -1,4 +1,4 @@
-package com.mo.dubboconsumer;
+package com.mo.api;
 
 //@SpringBootApplication
 public class DubboConsumerApplication {
