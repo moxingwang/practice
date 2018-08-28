@@ -7,16 +7,7 @@
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd
     ">
 
-	<dubbo:monitor protocol="registry" />
 
-	<!-- 提供方应用信息 -->
-	<dubbo:application name="dubbo-mo-test" />
+	<dubbo:reference id="orderTestService" version="1.0.0" interface="com.mo.dubbo.api.IOrderTestService" timeout="10000" retries="0"></dubbo:reference>
 
-	<dubbo:consumer check="false"/>
-
-	<!-- dubbo服务暴露端口 -->
-	<dubbo:protocol id="dubbo" name="dubbo" port="20880" threads="200" />
-
-	<!-- 使用zookeeper注册中心暴露服务地址 -->
-	<dubbo:registry protocol="zookeeper" address="zk201.dev.rs.com:2181,zk202.dev.rs.com:2181,zk203.dev.rs.com:2181" id="zookeeper" />
 </beans>
