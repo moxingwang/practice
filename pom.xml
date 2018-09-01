@@ -12,6 +12,7 @@
 	<description>Demo project for M</description>
 
 	<modules>
+		<module>websocket</module>
 		<module>dubbo</module>
 	</modules>
 

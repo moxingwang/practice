@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chatendpoint.html</title>
+    <script language="JavaScript">
+        var wsuri = "ws://localhost:8080/chatendpoint";
+        var ws = null;
+
+        function connectEndpoint(){
+            window.WebSocket = window.WebSocket || window.MozWebSocket;
+            if (!window.WebSocket){
+                alert("WebSocket not supported by this browser");
+                return;
+            }
+
+            ws = new WebSocket(wsuri);
+            ws.onmessage = function(evt) {
+                //alert(evt.data);
+                var old = document.getElementById("echo").value;
+                document.getElementById("echo").value = old+evt.data+"\r\n";
+            };
+
+            ws.onclose = function(evt) {
+                //alert("close");
+                document.getElementById("echo").value = "server disconnect.\r\n";
+            };
+
+            ws.onopen = function(evt) {
+                //alert("open");
+                document.getElementById("echo").value = "connect server.\r\n";
+            };
+        }
+
+        function sendmsg(){
+            ws.send(document.getElementById("send").value);
+        }
+    </script>
+</head>
+<body onload="connectEndpoint()">
+<input type="text" size="20" value="hi~" id="send"> <input type="button" value="send" onclick="sendmsg()"> <br>
+<textarea id="echo"  rows="50" cols="50">
+</textarea>
+</body>
+</html>
