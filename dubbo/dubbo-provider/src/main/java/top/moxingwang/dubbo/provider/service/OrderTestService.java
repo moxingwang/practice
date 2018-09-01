@@ -1,6 +1,6 @@
-package com.mo.dubbo.provider.service;
+package top.moxingwang.dubbo.provider.service;
 
-import com.mo.dubbo.api.IOrderTestService;
+import top.moxingwang.dubbo.api.IOrderTestService;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;

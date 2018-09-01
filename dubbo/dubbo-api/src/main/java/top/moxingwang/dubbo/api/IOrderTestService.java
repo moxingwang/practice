@@ -1,4 +1,4 @@
-package com.mo.dubbo.api;
+package top.moxingwang.dubbo.api;
 
 /**
  * @description:

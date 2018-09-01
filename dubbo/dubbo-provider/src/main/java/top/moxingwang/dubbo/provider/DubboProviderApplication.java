@@ -1,4 +1,4 @@
-package com.mo.dubbo.provider;
+package top.moxingwang.dubbo.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.mo.dubboprovider;
+package top.moxingwang.dubboprovider;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

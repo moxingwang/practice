@@ -8,6 +8,6 @@
     ">
 
 
-	<dubbo:reference id="orderTestService" version="1.0.0" interface="com.mo.dubbo.api.IOrderTestService" timeout="10000" retries="0"></dubbo:reference>
+	<dubbo:reference id="orderTestService" version="1.0.0" interface="IOrderTestService" timeout="10000" retries="0"></dubbo:reference>
 
 </beans>
