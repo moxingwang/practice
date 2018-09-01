@@ -1,4 +1,4 @@
-package com.mo.websocket.listener;
+package top.moxingwang.websocket.listener;
 
 /**
  * @description:

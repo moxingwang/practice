@@ -1,4 +1,4 @@
-package com.mo.websocket;
+package top.moxingwang.websocket;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

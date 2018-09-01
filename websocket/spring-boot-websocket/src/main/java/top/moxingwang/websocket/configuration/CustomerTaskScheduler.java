@@ -1,4 +1,4 @@
-package com.mo.websocket.configuration;
+package top.moxingwang.websocket.configuration;
 
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.Trigger;

@@ -1,4 +1,4 @@
-package com.mo.websocket;
+package top.moxingwang.websocket;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

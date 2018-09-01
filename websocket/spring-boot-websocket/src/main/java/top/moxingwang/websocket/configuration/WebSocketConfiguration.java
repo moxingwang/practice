@@ -1,33 +1,17 @@
-package com.mo.websocket.configuration;
+package top.moxingwang.websocket.configuration;
 
-import com.mo.websocket.listener.WebSocketDisconnectListener;
-import com.mo.websocket.listener.WebsocketConnectListener;
+import top.moxingwang.websocket.listener.WebSocketDisconnectListener;
+import top.moxingwang.websocket.listener.WebsocketConnectListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.server.ServerHttpRequest;
-import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.scheduling.TaskScheduler;
-import org.springframework.scheduling.Trigger;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
-import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
-import org.springframework.web.socket.config.annotation.WebSocketTransportRegistration;
 import org.springframework.web.socket.messaging.StompSubProtocolErrorHandler;
-import org.springframework.web.socket.server.HandshakeFailureException;
-import org.springframework.web.socket.server.HandshakeHandler;
-import org.springframework.web.socket.server.jetty.JettyRequestUpgradeStrategy;
 import org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean;
-import org.springframework.web.socket.server.support.DefaultHandshakeHandler;
-import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
-
-import java.util.Date;
-import java.util.Map;
-import java.util.concurrent.ScheduledFuture;
 
 /**
  * websocket配置类
@@ -38,7 +22,7 @@ import java.util.concurrent.ScheduledFuture;
 @EnableScheduling
 @Configuration
 @EnableWebSocketMessageBroker
-@ComponentScan("com.mo.websocket")
+@ComponentScan("top.moxingwang.websocket")
 public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer {
 
 /*

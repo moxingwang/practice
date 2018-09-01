@@ -1,4 +1,4 @@
-package com.mo.websocket.controller;
+package top.moxingwang.websocket.controller;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.slf4j.Logger;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
-import java.util.Set;
 
 /**
  * WebSocket Controller

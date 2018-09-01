@@ -1,4 +1,4 @@
-package com.mo.websocket;
+package top.moxingwang.websocket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

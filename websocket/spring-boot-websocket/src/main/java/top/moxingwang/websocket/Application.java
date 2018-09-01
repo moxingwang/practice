@@ -1,4 +1,4 @@
-package com.mo.websocket;
+package top.moxingwang.websocket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
