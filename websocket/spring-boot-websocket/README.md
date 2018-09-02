@@ -6,7 +6,7 @@ categories:
 tags: websocket
 ---
 
-> 一提到`websocket`我们会想到`http`,`长连接`,`推送`等等这些关键词，
+> 一提到`websocket`我们会想到`http`,`长连接`,`推送`等等这些关键词，在项目中真实应用也比较广泛，比如网页聊天、消息推送、网页通知等等。
 
 
 # case
