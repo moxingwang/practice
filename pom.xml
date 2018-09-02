@@ -15,6 +15,7 @@
 		<module>websocket</module>
 		<module>dubbo</module>
 		<module>test</module>
+		<module>docker</module>
 	</modules>
 
 </project>
