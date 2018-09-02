@@ -4,17 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>top.moxingwang</groupId>
-	<artifactId>practice</artifactId>
+	<artifactId>test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>practice</name>
-	<description>Demo project for M</description>
-
-	<modules>
-		<module>websocket</module>
-		<module>dubbo</module>
-		<module>test</module>
-	</modules>
+	<name>test</name>
+	<description>Demo project for test</description>
 
 </project>
