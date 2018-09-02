@@ -11,4 +11,8 @@
 	<name>test</name>
 	<description>Demo project for test</description>
 
+	<modules>
+		<module>common-demo</module>
+	</modules>
+
 </project>
