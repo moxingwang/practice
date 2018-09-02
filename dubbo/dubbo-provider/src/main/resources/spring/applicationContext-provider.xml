@@ -8,6 +8,6 @@
     ">
 
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service version="1.0.0" interface="top.moxingwang.dubbo.api.IOrderTestService" ref="orderTestService" timeout="3000" retries="0" registry="zookeeper" />
+	<dubbo:service version="1.0.0" interface="top.moxingwang.demo.dubbo.api.IOrderTestService" ref="orderTestService" timeout="3000" retries="0" registry="zookeeper" />
 	
 </beans>

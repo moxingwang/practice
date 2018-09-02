@@ -4,19 +4,15 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>top.moxingwang</groupId>
-	<artifactId>practice</artifactId>
+	<artifactId>redis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>practice</name>
-	<description>Demo project for M</description>
+	<name>redis</name>
+	<description>Demo project for Spring Boot</description>
 
 	<modules>
-		<module>websocket</module>
-		<module>dubbo</module>
-		<module>test</module>
-		<module>docker</module>
-		<module>redis</module>
+		<module>SpringBootRedis</module>
 	</modules>
 
 </project>
