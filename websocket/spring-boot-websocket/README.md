@@ -1,5 +1,12 @@
-# websocket
-websocket例子
+---
+title: spring boot websocket
+date: 2018-09-02
+categories:
+- websocket
+tags: websocket
+---
+
+> 一提到`websocket`我们会想到`http`,`长连接`,`推送`等等这些关键词，
 
 
 # case
@@ -8,6 +15,9 @@ websocket例子
 * 通知
 * 超时
 
+
 # reference
 * [spring websocket docs](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket)
 * [Springboot-Websocket整合](https://cdn2.jianshu.io/p/03e25674ce21?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
+* [WebSocket 结合 Nginx 实现域名及 WSS 协议访问](http://www.cnblogs.com/mafly/p/websocket.html)
+* [spring websocket中 STOMP](https://my.oschina.net/u/1590027/blog/879629)
