@@ -1,4 +1,4 @@
-package com.mo.debezium;
+package top.moxingwang.kafconsumer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class KafkaApplicationTests {
+public class KafConsumerApplicationTests {
 
 	@Test
 	public void contextLoads() {

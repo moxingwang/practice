@@ -1,4 +1,4 @@
-package com.mo.kafconsumer;
+package top.moxingwang.debezium;
 
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -20,12 +20,12 @@ public class SpringBootKafkaConsumer {
     @Autowired
     private KafkaTemplate<String, Object> template;
 
-    @KafkaListener(id = "t31", topics = "dbserver1.inventory.customers")
+    @KafkaListener(id = "t3", topics = "dbserver2.inventory.orders")
     public void listenT3(ConsumerRecord<Object, Object> cr) throws Exception {
         logger.info(cr.toString());
     }
 
-//    @KafkaListener(id = "t31141", topics = "rrr.inventory.customers")
+    @KafkaListener(id = "t34", topics = "dbserver2.inventory.customers")
     public void listenT34(ConsumerRecord<Object, Object> cr) throws Exception {
         logger.info(cr.toString());
     }

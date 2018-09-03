@@ -1,4 +1,4 @@
-package com.mo.debezium;
+package top.moxingwang.debezium;
 
 import io.debezium.config.Configuration;
 import io.debezium.embedded.EmbeddedEngine;

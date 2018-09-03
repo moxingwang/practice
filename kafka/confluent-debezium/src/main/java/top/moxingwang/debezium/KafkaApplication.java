@@ -1,4 +1,4 @@
-package com.mo.debezium;
+package top.moxingwang.debezium;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

@@ -1,4 +1,4 @@
-package com.mo.kafconsumer;
+package top.moxingwang.kafconsumer;
 
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

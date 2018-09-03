@@ -1,4 +1,4 @@
-package com.mo.kafconsumer;
+package top.moxingwang.kafconsumer;
 
 
 import org.slf4j.Logger;

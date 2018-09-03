@@ -11,12 +11,19 @@
 	<name>practice</name>
 	<description>Demo project for M</description>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
 	<modules>
 		<module>websocket</module>
 		<module>dubbo</module>
 		<module>test</module>
 		<module>docker</module>
 		<module>redis</module>
+		<module>kafka</module>
 	</modules>
 
 </project>

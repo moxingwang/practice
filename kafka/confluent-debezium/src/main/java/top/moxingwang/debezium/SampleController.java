@@ -1,4 +1,4 @@
-package com.mo.debezium;
+package top.moxingwang.debezium;
 
 
 import org.slf4j.Logger;

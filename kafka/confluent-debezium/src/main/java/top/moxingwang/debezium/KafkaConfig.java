@@ -1,4 +1,4 @@
-package com.mo.debezium;
+package top.moxingwang.debezium;
 
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
