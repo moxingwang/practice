@@ -44,7 +44,7 @@ confluent的安装部署相对比较简单，confluent为我们提供了Confluen
 
 * 访问测试
 	通过使用`http://localhost:9021`来访问`Control Center`,如图。
-	![](https://github.com/moxingwang/kafka/blob/master/resource/confluent-platform-control-center.png?raw=true)
+	![](https://github.com/moxingwang/resource/blob/master/image/kafka/confluent-platform-control-center.png?raw=true)
 
 #### 自定义启动
 

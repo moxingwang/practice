@@ -71,11 +71,11 @@ curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json"
 
 如下图，说明连接创建成功。
 
-![](https://github.com/moxingwang/kafka/blob/master/resource/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180820194418.png?raw=true)
+![](https://github.com/moxingwang/resource/blob/master/image/kafka/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180820194418.png?raw=true)
 
 也可以通过``` curl -H "Accept:application/json" localhost:8083/ ```查看已创建成功的connect，如图。
 
-![](https://github.com/moxingwang/kafka/blob/master/resource/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180820194425.png?raw=true)
+![](https://github.com/moxingwang/resource/blob/master/image/kafka/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180820194425.png?raw=true)
 
 #### 验证
 debezium会读取MySQL binlog产生数据改变事件，将事件发送到kafka队列，最简单的验证办法就是监听这些队列（这些队列按照表名区分）具体参考代码请查看[https://github.com/moxingwang/kafka](https://github.com/moxingwang/kafka)。
@@ -83,8 +83,8 @@ debezium会读取MySQL binlog产生数据改变事件，将事件发送到kafka�
 这里我们观察数据库的`inventory.customers`表，监听`dbserver1.inventory.customers`队列。
 
 首先将customers表id为1004的email字段内容update如图。
-![](https://github.com/moxingwang/kafka/blob/master/resource/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180820195810.png?raw=true)
-![](https://github.com/moxingwang/kafka/blob/master/resource/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180820195815.png?raw=true)
+![](https://github.com/moxingwang/resource/blob/master/image/kafka/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180820195810.png?raw=true)
+![](https://github.com/moxingwang/resource/blob/master/image/kafka/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180820195815.png?raw=true)
 
 此时，应用消费者会立马收到一条消费消息。
 
