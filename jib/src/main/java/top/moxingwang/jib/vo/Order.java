@@ -1,4 +1,4 @@
-package com.mo.jib.vo;
+package top.moxingwang.jib.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

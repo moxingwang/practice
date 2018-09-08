@@ -1,4 +1,4 @@
-package com.mo.jib;
+package top.moxingwang.jib;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;

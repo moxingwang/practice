@@ -24,6 +24,7 @@
 		<module>docker</module>
 		<module>redis</module>
 		<module>kafka</module>
+		<module>jib</module>
 	</modules>
 
 </project>

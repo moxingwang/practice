@@ -1,4 +1,4 @@
-package com.mo.jib;
+package top.moxingwang.jib;
 
 
 public class SwaggerApplicationTests {
