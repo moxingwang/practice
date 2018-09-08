@@ -1,6 +1,6 @@
 > [jib Official：GoogleContainerTools/jib](https://github.com/GoogleContainerTools/jib)
 
-> 本文示例完整demo github地址 [https://github.com/moxingwang/jib](https://github.com/moxingwang/jib)
+> 本文示例完整demo github地址 [https://github.com/moxingwang/practice/tree/master/jib](https://github.com/moxingwang/practice/tree/master/jib)
 
 > 想要了解并且使用jib，首先你得知道或者使用过docker，在这个基础上才能够明白jib是干什么得，解决了什么问题。
 
