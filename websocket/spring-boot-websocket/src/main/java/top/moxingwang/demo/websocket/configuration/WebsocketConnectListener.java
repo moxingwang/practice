@@ -27,5 +27,7 @@ public class WebsocketConnectListener implements ApplicationListener<SessionConn
         log.info("websocket建立连接{}，{}，{}", sessionId, serialNumber, paymentId);
 
 
+        //todo 存储sessionID
+        // websocketService.qrPaymentEventPoint(sessionId, serialNumber, paymentId);
     }
 }
