@@ -8,12 +8,9 @@ import org.springframework.web.socket.messaging.StompSubProtocolErrorHandler;
 
 /**
  * WebSocket Error处理
- *
- * @author wxw
- * @date 2017-12-30 14:04
  */
 public class WebSocketErrorHandler extends StompSubProtocolErrorHandler {
-    private static final Logger log = LoggerFactory.getLogger(WebSocketErrorHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(WebSocketErrorHandler.class);
 
     public WebSocketErrorHandler() {
         super();
@@ -21,19 +18,18 @@ public class WebSocketErrorHandler extends StompSubProtocolErrorHandler {
 
     @Override
     public Message<byte[]> handleClientMessageProcessingError(Message<byte[]> clientMessage, Throwable ex) {
-        log.error("handleClientMessageProcessingError:clientMessage-" + clientMessage + ", error-" + ex.getMessage());
+        logger.error("websocker错误", ex);
         return super.handleClientMessageProcessingError(clientMessage, ex);
     }
 
     @Override
     public Message<byte[]> handleErrorMessageToClient(Message<byte[]> errorMessage) {
-        log.error("handleErrorMessageToClient:errorMessage-" + errorMessage);
+        logger.error("websocker错误{}", errorMessage);
         return super.handleErrorMessageToClient(errorMessage);
     }
 
     @Override
     protected Message<byte[]> handleInternal(StompHeaderAccessor errorHeaderAccessor, byte[] errorPayload, Throwable cause, StompHeaderAccessor clientHeaderAccessor) {
-        log.error("handleInternal:errorHeaderAccessor-" + errorHeaderAccessor + ", errorPayload-" + errorPayload + ", error-" + cause.getMessage() + ", clientHeaderAccessor-" + clientHeaderAccessor);
         return super.handleInternal(errorHeaderAccessor, errorPayload, cause, clientHeaderAccessor);
     }
 }
