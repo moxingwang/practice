@@ -32,7 +32,7 @@
                     serialNumber: '8jdjuc1kio77h64d1ih7c1mul4',
                     paymentId:'98654657687654546'
                 }, function (frame) {
-                    stompClient.subscribe('/test/topic/testBroker', function (greeting) {
+                    stompClient.subscribe('/trade/topic/qrPaymentBroker', function (greeting) {
                         // alert(greeting);
                     });
                 });
