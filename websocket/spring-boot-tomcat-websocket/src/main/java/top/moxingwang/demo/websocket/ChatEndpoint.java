@@ -17,7 +17,7 @@ import java.util.Set;
  * @author: MoXingwang 2018-08-03 21:39
  **/
 @Component
-@ServerEndpoint(value = "/chatendpoint")
+@ServerEndpoint(value = "/websocket/trade/order/paid")
 public class ChatEndpoint {
     private static final Logger log = LoggerFactory.getLogger(WebSocketController.class);
 
