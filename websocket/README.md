@@ -26,6 +26,54 @@
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection  "upgrade";
 
+# test
+### nginx https test
+```
+server {
+        listen       4433 ssl;
+        server_name  localhost;
+
+        # ssl_certificate      cert.pem;
+        # ssl_certificate_key  cert.key;
+        ssl_certificate      server.crt;
+        ssl_certificate_key  server.key;
+
+        # ssl_session_cache    shared:SSL:1m;
+        # ssl_session_timeout  5m;
+
+        # ssl_ciphers  HIGH:!aNULL:!MD5;
+        # ssl_prefer_server_ciphers  on;
+        ssl_session_timeout 5m;
+        ssl_session_cache shared:SSL:50m;
+        ssl_protocols TLSV1.1 TLSV1.2 SSLv2 SSLv3;
+        ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+        ssl_prefer_server_ciphers  on;
+
+
+
+        access_log  /Users/mo/Desktop/access.log;
+
+
+        location /p-trade-oc-bweb {
+           proxy_pass http://172.18.58.68:8080/p-trade-oc-bweb;
+
+           proxy_redirect    off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+        }
+
+        location /public {
+            root   /Users/mo/Desktop;
+            index  index.html;
+            }
+    }
+```
+
 # reference
 * [spring websocket docs](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket)
 * [Springboot-Websocket整合](https://cdn2.jianshu.io/p/03e25674ce21?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
