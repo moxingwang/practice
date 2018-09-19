@@ -25,6 +25,7 @@
 		<module>redis</module>
 		<module>kafka</module>
 		<module>jib</module>
+		<module>spring-cloud</module>
 	</modules>
 
 </project>
