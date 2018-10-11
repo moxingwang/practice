@@ -26,6 +26,7 @@
 		<module>kafka</module>
 		<module>jib</module>
 		<module>spring-cloud</module>
+		<module>mq</module>
 	</modules>
 
 </project>
