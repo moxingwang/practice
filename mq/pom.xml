@@ -12,7 +12,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
-
+		<module>spring-xml</module>
 	</modules>
 
 </project>
