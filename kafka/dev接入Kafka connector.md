@@ -19,11 +19,11 @@ docker run -it --rm --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=debezium -e
     "database.port": "3306",
     "database.user": "root",
     "database.password": "debezium",
-    "database.server.id": "184054",
-    "database.server.name": "dbserver1",
+    "database.server.id": "184058",
+    "database.server.name": "dbserver3",
     "database.whitelist": "inventory",
     "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
-    "database.history.kafka.topic": "dbhistory.inventory"
+    "database.history.kafka.topic": "dbhistory.inventory111"
   }
 }
 ```
@@ -47,3 +47,52 @@ spring.kafka.consumer.group-id=trsdger
     }
 ```
 id可以随意制定，不重复即可，topics的构成方式为：[database.server.name].[数据库名].[表名]
+
+
+### 添加connector test2
+1 新增数据库
+```aidl
+DROP SCHEMA IF EXISTS tx_order;
+CREATE SCHEMA IF NOT EXISTS tx_order;
+
+use tx_order;
+
+CREATE TABLE `tx_promotion_job` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键，自增长，步长＝1',
+  `promotion_type` int(4) DEFAULT NULL COMMENT '促销类型',
+  `promotion_id` varchar(50) DEFAULT NULL COMMENT '促销代码，由促销中心系统提供',
+  `task_type` int(1) DEFAULT NULL COMMENT '类型 1 付费预定 2 买劵 3 拼团购',
+  `prom_value` varchar(50) DEFAULT NULL COMMENT '值',
+  `status` tinyint(1) DEFAULT '0' COMMENT '状态 0 未执行 1成功',
+  `execute_date` datetime DEFAULT NULL COMMENT '执行时间',
+  `create_date` datetime NOT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5212 DEFAULT CHARSET=utf8 COMMENT='外部job数据处理表';
+
+
+
+show variables like '%log_bin%';
+```
+
+
+2 添加
+```aidl
+{
+  "name": "tx_order-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "1",
+    "database.hostname": "192.168.226.126",
+    "database.port": "3306",
+    "database.user": "root",
+    "database.password": "debezium",
+    "database.server.id": "184059",
+    "database.server.name": "orderServer",
+    "database.whitelist": "tx_order",
+    "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
+    "database.history.kafka.topic": "dbhistory.tx_order"
+  }
+}
+```
+
+3 测试如上
