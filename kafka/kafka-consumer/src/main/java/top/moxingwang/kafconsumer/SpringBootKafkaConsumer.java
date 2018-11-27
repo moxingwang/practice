@@ -20,12 +20,12 @@ public class SpringBootKafkaConsumer {
     @Autowired
     private KafkaTemplate<String, Object> template;
 
-    @KafkaListener(id = "t31", topics = "dbserver1.inventory.customers")
+    @KafkaListener(id = "t3143", topics = "dbserver3.inventory.customers")
     public void listenT3(ConsumerRecord<Object, Object> cr) throws Exception {
         logger.info(cr.toString());
     }
 
-//    @KafkaListener(id = "t31141", topics = "rrr.inventory.customers")
+//    @KafkaListener(id = "t31141", topics = "dbserver2.tx_order.tx_promotion_job")
     public void listenT34(ConsumerRecord<Object, Object> cr) throws Exception {
         logger.info(cr.toString());
     }
