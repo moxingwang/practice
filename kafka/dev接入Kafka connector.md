@@ -96,3 +96,28 @@ show variables like '%log_bin%';
 ```
 
 3 测试如上
+
+
+
+### 添加connector dev正式数据库
+1 添加
+```aidl
+{
+  "name": "trade_order-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "1",
+    "database.hostname": "db201.dev.rs.com",
+    "database.port": "3306",
+    "database.user": "zyp",
+    "database.password": "zyp_user",
+    "database.server.id": "190001",
+    "database.server.name": "tradeOrderServer",
+    "database.whitelist": "tx_order",
+    "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
+    "database.history.kafka.topic": "dbhistory.trade.tx_order"
+  }
+}
+```
+
+3 测试如上
