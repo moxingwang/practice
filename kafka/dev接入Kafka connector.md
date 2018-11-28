@@ -109,11 +109,13 @@ show variables like '%log_bin%';
     "tasks.max": "1",
     "database.hostname": "db201.dev.rs.com",
     "database.port": "3306",
-    "database.user": "zyp",
-    "database.password": "zyp_user",
+    "database.user": "canal",
+    "database.password": "canal",
     "database.server.id": "190001",
     "database.server.name": "tradeOrderServer",
     "database.whitelist": "tx_order",
+    "include.schema.changes": "true",
+    "snapshot.mode": "schema_only"
     "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
     "database.history.kafka.topic": "dbhistory.trade.tx_order"
   }
