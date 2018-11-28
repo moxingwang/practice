@@ -28,6 +28,7 @@
 		<module>spring-cloud</module>
 		<module>mq</module>
 		<module>springboot-feature</module>
+		<module>search</module>
 	</modules>
 
 </project>
