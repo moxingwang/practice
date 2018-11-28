@@ -78,21 +78,24 @@ show variables like '%log_bin%';
 2 添加
 ```aidl
 {
-  "name": "tx_order-connector",
-  "config": {
-    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
-    "tasks.max": "1",
-    "database.hostname": "192.168.226.126",
+   "name": "trade_order-connector",
+   "config": {
+     "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+     "tasks.max": "1",
+   "database.hostname": "192.168.226.126",
     "database.port": "3306",
     "database.user": "root",
     "database.password": "debezium",
-    "database.server.id": "184059",
-    "database.server.name": "orderServer",
-    "database.whitelist": "tx_order",
-    "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
-    "database.history.kafka.topic": "dbhistory.tx_order"
-  }
-}
+     "database.server.id": "1901",
+     "database.server.name": "tradeOrderServer",
+     "database.whitelist": "tx_order",
+     "include.schema.changes": "true",
+     "snapshot.mode": "schema_only",
+     "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
+     "database.history.kafka.topic": "dbhistory.trade.tx_order"
+   }
+ }
+
 ```
 
 3 测试如上
@@ -114,10 +117,12 @@ show variables like '%log_bin%';
     "database.server.id": "190001",
     "database.server.name": "tradeOrderServer",
     "database.whitelist": "tx_order",
-    "include.schema.changes": "true",
-    "snapshot.mode": "schema_only"
+    "include.schema.changes": "false",
+    "snapshot.mode": "schema_only",
+    "snapshot.locking.mode": "none",
     "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
-    "database.history.kafka.topic": "dbhistory.trade.tx_order"
+    "database.history.kafka.topic": "dbhistory.trade.tx_order",
+    "decimal.handling.mode": "string"
   }
 }
 ```

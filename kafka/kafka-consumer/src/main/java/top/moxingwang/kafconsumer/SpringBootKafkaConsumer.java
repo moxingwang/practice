@@ -25,7 +25,7 @@ public class SpringBootKafkaConsumer {
         logger.info(cr.toString());
     }
 
-    @KafkaListener(id = "txorder11", topics = "orderServer.tx_order.tx_promotion_job")
+    @KafkaListener(id = "222", topics = "tradeOrderServer2.tx_order.tx_promotion_job")
     public void listenT34(ConsumerRecord<Object, Object> cr) throws Exception {
         logger.info(cr.toString());
     }
