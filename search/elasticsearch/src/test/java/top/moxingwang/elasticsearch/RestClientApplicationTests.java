@@ -87,7 +87,7 @@ public class RestClientApplicationTests {
     public void query() throws IOException {
         SearchRequest searchRequest = new SearchRequest("trade-order-order");
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
-        sourceBuilder.query(QueryBuilders.matchQuery("name", ""));
+        sourceBuilder.query(QueryBuilders.matchQuery("user", ""));
         sourceBuilder.from(0);
         sourceBuilder.size(5);
         searchRequest.source(sourceBuilder);
