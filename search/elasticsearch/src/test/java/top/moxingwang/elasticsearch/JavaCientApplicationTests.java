@@ -1,3 +1,4 @@
+/*
 package top.moxingwang.elasticsearch;
 
 import org.elasticsearch.client.RestHighLevelClient;
@@ -20,9 +21,11 @@ public class JavaCientApplicationTests {
     @Autowired
     private RestHighLevelClient restHighLevelClient;
 
-    /**
+    */
+/**
      * -----------  spring boot java client 方式访问    -------------
-     */
+     *//*
+
     @Test
     public void contextLoads() {
         IndexQuery indexQuery = new IndexQueryBuilder().withObject(new User("111", "111")).build();
@@ -57,3 +60,4 @@ public class JavaCientApplicationTests {
         }
     }
 }
+*/

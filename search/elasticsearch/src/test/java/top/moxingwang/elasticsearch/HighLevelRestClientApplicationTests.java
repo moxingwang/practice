@@ -1,3 +1,4 @@
+/*
 package top.moxingwang.elasticsearch;
 
 import org.apache.http.HttpHost;
@@ -20,9 +21,11 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.Date;
 
+*/
 /**
  * 高版本
- */
+ *//*
+
 public class HighLevelRestClientApplicationTests {
 
     private RestHighLevelClient restHighLevelClient;
@@ -51,11 +54,13 @@ public class HighLevelRestClientApplicationTests {
     }
 
 
-    /**
+    */
+/**
      * 创建index
      *
      * @throws IOException
-     */
+     *//*
+
     @Test
     public void createIndex() throws IOException {
         CreateIndexRequest createIndexRequest = new CreateIndexRequest();
@@ -84,11 +89,13 @@ public class HighLevelRestClientApplicationTests {
         System.out.println(indexRequest);
     }
 
-    /**
+    */
+/**
      * 分页查询
      *
      * @throws IOException
-     */
+     *//*
+
     @Test
     public void query() throws IOException {
         SearchRequest searchRequest = new SearchRequest(index);
@@ -106,3 +113,4 @@ public class HighLevelRestClientApplicationTests {
 
 
 }
+*/
