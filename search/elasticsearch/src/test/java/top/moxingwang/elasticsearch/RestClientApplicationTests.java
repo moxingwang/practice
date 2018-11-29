@@ -60,6 +60,7 @@ public class RestClientApplicationTests {
         System.out.println(indicesClient);
     }
 
+    //https://www.elastic.co/guide/en/elasticsearch/client/java-rest/master/java-rest-high-document-index.html
     @Test
     public void createDocument() throws IOException {
         XContentBuilder builder = XContentFactory.jsonBuilder();
