@@ -37,6 +37,7 @@
     </dependencies>
 
     <modules>
+        <module>javaclient</module>
         <module>elasticsearch</module>
     </modules>
 

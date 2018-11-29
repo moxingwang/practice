@@ -41,6 +41,13 @@
 			<artifactId>elasticsearch-rest-high-level-client</artifactId>
 			<version>6.5.1</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.2.5.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
