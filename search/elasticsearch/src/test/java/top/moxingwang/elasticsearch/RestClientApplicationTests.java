@@ -1,54 +1,61 @@
 package top.moxingwang.elasticsearch;
 
+import org.apache.http.HttpHost;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
-import org.springframework.data.elasticsearch.core.query.IndexQuery;
-import org.springframework.data.elasticsearch.core.query.IndexQueryBuilder;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class ElasticsearchApplicationTests {
+public class RestClientApplicationTests {
 
-    @Autowired
-    private ElasticsearchTemplate elasticsearchTemplate;
-    @Autowired
     private RestHighLevelClient restHighLevelClient;
 
+    @Before
+    public void elasticsearchRestHighLevelClient() {
+        restHighLevelClient = new RestHighLevelClient(
+                RestClient.builder(
+//                        new HttpHost("esuc.dev.rs.com", 9200, "http")
+                        new HttpHost("localhost", 9200, "http")
+                ));
 
-    /**
-     * -----------  rest client 方式访问    -------------
-     */
+    }
+
+    @After
+    public void destroy() {
+        try {
+            if (null != restHighLevelClient) {
+                restHighLevelClient.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     /**
      * 创建index
+     *
      * @throws IOException
      */
     @Test
     public void createIndex() throws IOException {
         CreateIndexRequest createIndexRequest = new CreateIndexRequest();
         createIndexRequest.index("trade-order-order");
-        CreateIndexResponse indicesClient = restHighLevelClient.indices().create(createIndexRequest,RequestOptions.DEFAULT);
+        CreateIndexResponse indicesClient = restHighLevelClient.indices().create(createIndexRequest, RequestOptions.DEFAULT);
 
         System.out.println(indicesClient);
     }
@@ -65,13 +72,14 @@ public class ElasticsearchApplicationTests {
         builder.endObject();
         IndexRequest indexRequest = new IndexRequest("trade-order-order", "doc").source(builder);
 
-        restHighLevelClient.index(indexRequest,RequestOptions.DEFAULT);
+        restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
 
         System.out.println(indexRequest);
     }
 
     /**
      * 分页查询
+     *
      * @throws IOException
      */
     @Test
@@ -90,40 +98,4 @@ public class ElasticsearchApplicationTests {
     }
 
 
-    /**
-     * -----------  spring boot java client 方式访问    -------------
-     */
-    @Test
-    public void contextLoads() {
-        IndexQuery indexQuery = new IndexQueryBuilder().withObject(new User("111", "111")).build();
-        elasticsearchTemplate.index(indexQuery);
-
-    }
-
-    @Document(indexName = "test", type = "test")
-    class User {
-        private String user;
-        private String id;
-
-        public User(String user, String id) {
-            this.user = user;
-            this.id = id;
-        }
-
-        public String getUser() {
-            return user;
-        }
-
-        public void setUser(String user) {
-            this.user = user;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-    }
 }
