@@ -1,13 +1,11 @@
 package top.moxingwang.elasticsearch;
 
 import org.apache.http.HttpHost;
-import org.elasticsearch.action.DocWriteRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.client.IndicesClient;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -22,7 +20,10 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.Date;
 
-public class RestClientApplicationTests {
+/**
+ * 高版本
+ */
+public class HighLevelRestClientApplicationTests {
 
     private RestHighLevelClient restHighLevelClient;
 
@@ -75,7 +76,7 @@ public class RestClientApplicationTests {
             builder.field("message", "trying out Elasticsearch");
         }
         builder.endObject();
-        IndexRequest indexRequest = new IndexRequest(index,"data").source(builder);
+        IndexRequest indexRequest = new IndexRequest(index, "data").source(builder);
 
 
         restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
