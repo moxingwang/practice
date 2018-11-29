@@ -1,9 +1,14 @@
 package top.moxingwang.elasticsearch;
 
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
+import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
+import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.common.xcontent.XContentBuilder;
+import org.elasticsearch.common.xcontent.XContentFactory;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.junit.Test;
@@ -17,6 +22,9 @@ import org.springframework.data.elasticsearch.core.query.IndexQueryBuilder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -32,6 +40,40 @@ public class ElasticsearchApplicationTests {
      * -----------  rest client 方式访问    -------------
      */
 
+    /**
+     * 创建index
+     * @throws IOException
+     */
+    @Test
+    public void createIndex() throws IOException {
+        CreateIndexRequest createIndexRequest = new CreateIndexRequest();
+        createIndexRequest.index("trade-order-order");
+        CreateIndexResponse indicesClient = restHighLevelClient.indices().create(createIndexRequest,RequestOptions.DEFAULT);
+
+        System.out.println(indicesClient);
+    }
+
+    @Test
+    public void createDocument() throws IOException {
+        XContentBuilder builder = XContentFactory.jsonBuilder();
+        builder.startObject();
+        {
+            builder.field("user", "kimchy");
+            builder.timeField("postDate", new Date());
+            builder.field("message", "trying out Elasticsearch");
+        }
+        builder.endObject();
+        IndexRequest indexRequest = new IndexRequest("trade-order-order", "doc").source(builder);
+
+        restHighLevelClient.index(indexRequest,RequestOptions.DEFAULT);
+
+        System.out.println(indexRequest);
+    }
+
+    /**
+     * 分页查询
+     * @throws IOException
+     */
     @Test
     public void query() throws IOException {
         SearchRequest searchRequest = new SearchRequest("trade-order-order");
