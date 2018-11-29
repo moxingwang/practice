@@ -1,9 +1,10 @@
 package top.moxingwang.elasticsearch;
 
-import org.elasticsearch.client.Client;
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 
 /**
  * @description:
@@ -11,8 +12,18 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
  **/
 @Configuration
 public class ElasticSearchConfig {
-    /*@Bean
-    public ElasticsearchTemplate elasticsearchTemplate(Client client) {
-        return new ElasticsearchTemplate(client);
-    }*/
+    @Bean
+    public RestHighLevelClient elasticsearchRestHighLevelClient() {
+        RestHighLevelClient client = new RestHighLevelClient(
+                RestClient.builder(
+                        new HttpHost("esuc.dev.rs.com", 9200, "http")));
+
+        return client;
+    }
+
+
+    /**
+     * todo client.close();
+     */
+
 }
