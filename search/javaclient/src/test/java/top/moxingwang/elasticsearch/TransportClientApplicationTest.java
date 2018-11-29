@@ -1,5 +1,6 @@
 package top.moxingwang.elasticsearch;
 
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
@@ -30,6 +31,8 @@ public class TransportClientApplicationTest {
                 );
         GetResponse response = client.prepareGet("trade-order-orders2", "data", "AWdeq7vLqHbFY58w-GxL").get();
 
+//        CreateIndexRequest createIndexRequest = new CreateIndexRequest("dfsdfsd");
+//        client.admin().indices().create(createIndexRequest);
         System.out.println(1);
     }
 
