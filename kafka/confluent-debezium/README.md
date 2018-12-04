@@ -14,7 +14,7 @@
 
 * 安装
 > 安装非常简单只需解压tar文件启动即可,组合安装查看[Manual Install using ZIP and TAR Archives](https://docs.confluent.io/current/installation/installing_cp/zip-tar.html)。
-
+> 备用下载地址：[https://packages.confluent.io/archive/4.1/confluent-oss-4.1.2-2.11.zip](https://packages.confluent.io/archive/4.1/confluent-oss-4.1.2-2.11.zip)
 ```
 tar -zxvf confluent-oss-4.1.2-2.11.tar.gz
 ```
