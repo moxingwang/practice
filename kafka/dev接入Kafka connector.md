@@ -131,3 +131,7 @@ show variables like '%log_bin%';
 ```
 
 3 测试如上
+
+## 常见问题
+* Unexpected exception while parsing statement alter table pay_cs_market_balance alter column  balance_amt set default 0 at line 1
+> https://blog.csdn.net/lzufeng/article/details/81488524
