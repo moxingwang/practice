@@ -117,6 +117,7 @@ show variables like '%log_bin%';
     "database.server.id": "190004",
     "database.server.name": "tradeOrderServer",
     "database.whitelist": "tx_order",
+    "table.whitelist": "tx_order,tx_order_addition,tx_order_item",
     "include.schema.changes": "false",
     "snapshot.mode": "schema_only",
     "snapshot.locking.mode": "none",
