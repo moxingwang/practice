@@ -106,7 +106,7 @@ show variables like '%log_bin%';
 1 添加
 ```aidl
 {
-  "name": "trade-order-connector",
+  "name": "order-center-connector",
   "config": {
     "connector.class": "io.debezium.connector.mysql.MySqlConnector",
     "tasks.max": "1",
@@ -114,15 +114,14 @@ show variables like '%log_bin%';
     "database.port": "3306",
     "database.user": "canal",
     "database.password": "canal",
-    "database.server.id": "190004",
-    "database.server.name": "tradeOrderServer",
+    "database.server.id": "190058",
+    "database.server.name": "tradeOrder",
     "database.whitelist": "tx_order",
-    "table.whitelist": "tx_order,tx_order_addition,tx_order_item",
     "include.schema.changes": "false",
     "snapshot.mode": "schema_only",
     "snapshot.locking.mode": "none",
     "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
-    "database.history.kafka.topic": "dbhistory.trade.order",
+    "database.history.kafka.topic": "history.trade.order.center",
     "decimal.handling.mode": "string",
     "database.history.store.only.monitored.tables.ddl":"true",
     "database.history.skip.unparseable.ddl":"true"
