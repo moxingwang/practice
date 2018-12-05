@@ -103,7 +103,7 @@ show variables like '%log_bin%';
 
 
 ### 添加connector dev正式数据库
-1 添加
+1 添加 ("table.whitelist": "tx_order", 指定使用哪些表)
 ```aidl
 {
   "name": "order-center-connector",
@@ -117,6 +117,7 @@ show variables like '%log_bin%';
     "database.server.id": "190058",
     "database.server.name": "tradeOrder",
     "database.whitelist": "tx_order",
+    "table.whitelist": "tx_order",
     "include.schema.changes": "false",
     "snapshot.mode": "schema_only",
     "snapshot.locking.mode": "none",
