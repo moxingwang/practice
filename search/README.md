@@ -15,3 +15,7 @@ analyzed:默认选项，以标准的全文索引方式，分析字符串，完�
 not_analyzed:精确索引，不对字符串做分析，直接索引字段数据的精确内容。
 no：不索引该字段。
 ```
+
+* QueryBuilders.matchQuery 适用于分词（analyzed）
+* QueryBuilders.termQuery 适用于精确索引（not_analyzed）
+* QueryBuilders.wildcardQuery 适用于精确索引（not_analyzed）
