@@ -124,8 +124,7 @@ show variables like '%log_bin%';
     "database.history.kafka.topic": "dbhistory.trade_order_0",
     "decimal.handling.mode": "string",
     "database.history.store.only.monitored.tables.ddl":"true",
-    "database.history.skip.unparseable.ddl":"true",
-    "database.serverTimezone":"CST"
+    "database.history.skip.unparseable.ddl":"true"
   }
 }
 ```
