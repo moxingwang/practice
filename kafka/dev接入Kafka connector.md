@@ -115,7 +115,7 @@ show variables like '%log_bin%';
     "database.user": "canal",
     "database.password": "canal",
     "database.server.id": "190061",
-    "database.server.name": "trade-order",
+    "database.server.name": "tradeOrder",
     "database.whitelist": "tx_order",
     "table.whitelist": "tx_order",
     "include.schema.changes": "false",
