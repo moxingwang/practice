@@ -114,18 +114,19 @@ show variables like '%log_bin%';
     "database.port": "3306",
     "database.user": "canal",
     "database.password": "canal",
-    "database.server.id": "190058",
-    "database.server.name": "tradeOrder",
+    "database.server.id": "190061",
+    "database.server.name": "trade-order",
     "database.whitelist": "tx_order",
     "table.whitelist": "tx_order",
     "include.schema.changes": "false",
     "snapshot.mode": "schema_only",
     "snapshot.locking.mode": "none",
     "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
-    "database.history.kafka.topic": "history.trade.order.center",
+    "database.history.kafka.topic": "history.trade.order",
     "decimal.handling.mode": "string",
     "database.history.store.only.monitored.tables.ddl":"true",
-    "database.history.skip.unparseable.ddl":"true"
+    "database.history.skip.unparseable.ddl":"true",
+    "database.serverTimezone":"UTC"
   }
 }
 ```
