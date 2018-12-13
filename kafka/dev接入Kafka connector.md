@@ -103,10 +103,10 @@ show variables like '%log_bin%';
 
 
 ### 添加connector dev正式数据库
-1 添加
+1 添加 ("table.whitelist": "tx_order", 指定使用哪些表)
 ```aidl
 {
-  "name": "trade-order-connector",
+  "name": "order-center-connector",
   "config": {
     "connector.class": "io.debezium.connector.mysql.MySqlConnector",
     "tasks.max": "1",
@@ -114,18 +114,25 @@ show variables like '%log_bin%';
     "database.port": "3306",
     "database.user": "canal",
     "database.password": "canal",
-    "database.server.id": "190004",
-    "database.server.name": "tradeOrderServer",
+    "database.server.id": "190061",
+    "database.server.name": "tradeOrder",
     "database.whitelist": "tx_order",
-    "table.whitelist": "tx_order,tx_order_addition,tx_order_item",
+    "table.whitelist": "tx_order",
     "include.schema.changes": "false",
     "snapshot.mode": "schema_only",
     "snapshot.locking.mode": "none",
     "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
-    "database.history.kafka.topic": "dbhistory.trade.order",
-    "decimal.handling.mode": "string"
+    "database.history.kafka.topic": "history.trade.order",
+    "decimal.handling.mode": "string",
+    "database.history.store.only.monitored.tables.ddl":"true",
+    "database.history.skip.unparseable.ddl":"true",
+    "database.serverTimezone":"UTC"
   }
 }
 ```
 
 3 测试如上
+
+## 常见问题
+1 Unexpected exception while parsing statement alter table pay_cs_market_balance alter column  balance_amt set default 0 at line 1
+> https://blog.csdn.net/lzufeng/article/details/81488524
