@@ -45,6 +45,18 @@ confluent的安装部署相对比较简单，confluent为我们提供了Confluen
 * 访问测试
 	通过使用`http://localhost:9021`来访问`Control Center`,如图。
 	![](https://github.com/moxingwang/resource/blob/master/image/kafka/confluent-platform-control-center.png?raw=true)
+* 如何查看日志[view log](https://docs.confluent.io/current/cli/command-reference/confluent-log.html)
+    ```
+    View a snapshot of the Connect log with the less viewer.
+    
+    confluent log connect
+    Tail the Kafka log and wait to print additional output until the log command is interrupted.
+    
+    confluent log kafka -f
+    Tip
+    
+    Type man tail to get more information about the available options.
+    ```
 
 #### 自定义启动
 
