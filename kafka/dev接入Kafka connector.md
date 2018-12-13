@@ -135,3 +135,8 @@ show variables like '%log_bin%';
 ## 常见问题
 1 Unexpected exception while parsing statement alter table pay_cs_market_balance alter column  balance_amt set default 0 at line 1
 > https://blog.csdn.net/lzufeng/article/details/81488524
+
+2 如果配置无效
+> 1 检查表白名单
+> 2 检查database.server.id是否重复
+> 3 检查其他配置重复是否
