@@ -121,7 +121,7 @@ show variables like '%log_bin%';
     "snapshot.mode": "schema_only",
     "snapshot.locking.mode": "none",
     "database.history.kafka.bootstrap.servers": "192.168.122.111:9092",
-    "database.history.kafka.topic": "history.trade.order",
+    "database.history.kafka.topic": "dbhistory.trade.order",
     "decimal.handling.mode": "string",
     "database.history.store.only.monitored.tables.ddl":"true",
     "database.history.skip.unparseable.ddl":"true",
