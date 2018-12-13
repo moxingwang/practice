@@ -125,7 +125,7 @@ show variables like '%log_bin%';
     "decimal.handling.mode": "string",
     "database.history.store.only.monitored.tables.ddl":"true",
     "database.history.skip.unparseable.ddl":"true",
-    "database.serverTimezone":"UTC"
+    "database.serverTimezone":"CST"
   }
 }
 ```
