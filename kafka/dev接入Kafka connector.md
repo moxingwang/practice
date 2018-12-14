@@ -129,6 +129,12 @@ show variables like '%log_bin%';
 }
 ```
 
+### [es类型映射](https://www.elastic.co/guide/cn/elasticsearch/guide/cn/mapping-intro.html)
+
+### 分词测试
+* https://zhuanlan.zhihu.com/p/29183128
+* http://esuc.dev.rs.com:9200/_analyze?pretty&analyzer=keyword &text=SO5046240000014238
+
 3 测试如上
 
 ## 常见问题
