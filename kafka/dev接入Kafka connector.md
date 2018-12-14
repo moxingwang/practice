@@ -155,3 +155,7 @@ show variables like '%log_bin%';
 5 要不要指定指定mapping，有几种方式指定
 
 6 序列化问题
+
+# REFERENCE
+* [kafka connect简介以及部署](https://blog.csdn.net/u011687037/article/details/57411790)
+
