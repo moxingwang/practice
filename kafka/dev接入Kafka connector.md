@@ -131,11 +131,10 @@ show variables like '%log_bin%';
 
 ### [es类型映射](https://www.elastic.co/guide/cn/elasticsearch/guide/cn/mapping-intro.html)
 
-### 分词测试
-* https://zhuanlan.zhihu.com/p/29183128
-* http://esuc.dev.rs.com:9200/_analyze?pretty&analyzer=keyword &text=SO5046240000014238
 
 3 测试如上
+
+
 
 ## 常见问题
 1 Unexpected exception while parsing statement alter table pay_cs_market_balance alter column  balance_amt set default 0 at line 1
@@ -146,5 +145,13 @@ show variables like '%log_bin%';
 > 2 检查database.server.id是否重复
 > 3 检查其他配置重复是否
 
-3 时区
+3 日期类型字段处理
 > 如何直接使用String接受timestamp的字段，时区是UTC的，需要使用Date接收处理，其他类型的字段如datetime需要修改变结构。
+
+4 如何分词
+* https://zhuanlan.zhihu.com/p/29183128
+* http://esuc.dev.rs.com:9200/_analyze?pretty&analyzer=keyword &text=SO5046240000014238
+
+5 要不要指定指定mapping，有几种方式指定
+
+6 序列化问题
