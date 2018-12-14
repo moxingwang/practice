@@ -139,3 +139,6 @@ show variables like '%log_bin%';
 > 1 检查表白名单
 > 2 检查database.server.id是否重复
 > 3 检查其他配置重复是否
+
+3 时区
+> 如何直接使用String接受timestamp的字段，时区是UTC的，需要使用Date接收处理，其他类型的字段如datetime需要修改变结构。
