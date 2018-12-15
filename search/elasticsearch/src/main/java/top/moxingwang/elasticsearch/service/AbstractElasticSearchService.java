@@ -35,6 +35,10 @@ public abstract class AbstractElasticSearchService {
 
     public static final Map<String, List<String>> INDEX_FIELDS_TEMPLATE = new ConcurrentHashMap<>();
 
+    /**
+     * 生成mapping内容
+     * @param args
+     */
     public static void main(String[] args) {
         Map<String, Map<String, Map<String, String>>> indexMapping = new HashMap<>();
         Field[] fields = ElasticSearchIndex.class.getDeclaredFields();
