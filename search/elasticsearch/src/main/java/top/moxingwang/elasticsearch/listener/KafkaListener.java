@@ -25,8 +25,6 @@ public class KafkaListener {
 
     @org.springframework.kafka.annotation.KafkaListener(topics = {
             AbstractElasticSearchService.SERVER_DB + AbstractElasticSearchService.POINT + AbstractElasticSearchService.TABLE_TX_ORDER,
-            AbstractElasticSearchService.SERVER_DB + AbstractElasticSearchService.POINT + AbstractElasticSearchService.TABLE_TX_ORDER_ADDITION,
-            AbstractElasticSearchService.SERVER_DB + AbstractElasticSearchService.POINT + AbstractElasticSearchService.TABLE_TX_CUSTOMER_SERVICE,
     })
     public void listner(List<ConsumerRecord<Object, DebeziumEvent>> crs, Acknowledgment acknowledgment) {
 

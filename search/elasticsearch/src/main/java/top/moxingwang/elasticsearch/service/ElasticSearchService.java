@@ -34,13 +34,6 @@ public class ElasticSearchService extends AbstractElasticSearchService {
     @Override
     public void index(String topic, ElasticSearchIndex beforeTable, ElasticSearchIndex afterTable) {
         //数据处理
-        if ((SERVER_DB + POINT + TABLE_TX_CUSTOMER_SERVICE).equals(topic)) {
-            if (null != beforeTable) {
-                beforeTable.setId(beforeTable.getRefundOrderId());
-            }
-            afterTable.setId(afterTable.getRefundOrderId());
-        }
-
 
         String indexName = INDEX_SALES;
 
