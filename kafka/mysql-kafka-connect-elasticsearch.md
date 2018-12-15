@@ -145,3 +145,17 @@ connector创建成功后,接下来应该测试debezium是否开始工作了,MySQ
 ```
 ![](https://github.com/m65536/resource/blob/master/image/kafka/local_debezium_2.png?raw=true)
 
+* 启动项目测试
+  
+  启动[SpringBootElasticsearchApplication](https://github.com/m65536/practice/blob/master/search/elasticsearch/src/main/java/top/moxingwang/elasticsearch/SpringBootElasticsearchApplication.java)后,更改orders表任意数据,此时我们看到日志,再去观察es,如图.
+
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_debezium_4.png?raw=true)
+
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_debezoim_5.png?raw=true)
+
+  此时说明MySQL到connect到kafka再到server再到es整个流程通了,同时可以通过server去查询es[TestController](https://github.com/m65536/practice/blob/master/search/elasticsearch/src/main/java/top/moxingwang/elasticsearch/controller/TestController.java)[http://localhost:8080/test/list](http://localhost:8080/test/list)
+
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_debezium_6.png?raw=true)
+
+
+## 常见问题
