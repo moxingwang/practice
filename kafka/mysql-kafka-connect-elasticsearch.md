@@ -153,7 +153,7 @@ connector创建成功后,接下来应该测试debezium是否开始工作了,MySQ
 
 ![](https://github.com/m65536/resource/blob/master/image/kafka/local_debezoim_5.png?raw=true)
 
-  此时说明MySQL到connect到kafka再到server再到es整个流程通了,同时可以通过server去查询es[TestController](https://github.com/m65536/practice/blob/master/search/elasticsearch/src/main/java/top/moxingwang/elasticsearch/controller/TestController.java)[http://localhost:8080/test/list](http://localhost:8080/test/list)
+  此时说明MySQL到connect到kafka再到server再到es整个流程通了,同时可以通过server去查询es[TestController](https://github.com/m65536/practice/blob/master/search/elasticsearch/src/main/java/top/moxingwang/elasticsearch/controller/TestController.java)-[http://localhost:8080/test/list](http://localhost:8080/test/list)
 
 ![](https://github.com/m65536/resource/blob/master/image/kafka/local_debezium_6.png?raw=true)
 
