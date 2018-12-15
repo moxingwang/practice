@@ -45,3 +45,58 @@ docker run -it --rm --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=debezium -e
   在安装目录下执行`./bin/connect-distributed.sh config/connect-distributed.properties`
 
 #### elasticsearch
+* [download](https://www.elastic.co/cn/downloads/elasticsearch)
+* 启动,安装目录下 `bin/elasticsearch`
+
+## 配置connect
+  截止目前已经有了本地的`MySQL`,`kafka`,`kafka connect`,`elasticearch`,接下来配置kafka connect,通过配置好connect能够让debezium读取到binlog把MySQL的数据change事件写入到kafka的topic中.
+
+  kafka connect为我们提供了restful的访问方式,详细文档查看[Kafka Connect REST Interface](https://docs.confluent.io/current/connect/references/restapi.html).
+
+* 新增一个connect
+
+  put http://localhost:8083/connectors/order-center-connector/config
+  ```
+      {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "1",
+    "database.hostname": "localhost",
+    "database.port": "3306",
+    "database.user": "root",
+    "database.password": "debezium",
+    "database.server.id": "1",
+    "database.server.name": "trade_order_0",
+    "database.whitelist": "inventory",
+    "include.schema.changes": "false",
+    "snapshot.mode": "schema_only",
+    "snapshot.locking.mode": "none",
+    "database.history.kafka.bootstrap.servers": "localhost:9092",
+    "database.history.kafka.topic": "dbhistory.tradeOrder1",
+    "decimal.handling.mode": "string",
+    "database.history.store.only.monitored.tables.ddl":"true",
+    "database.history.skip.unparseable.ddl":"true"
+  }
+  ```
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_update_insert_config_debezium_0.png?raw=true)
+
+备注: `http://localhost:8083/connectors/order-center-connector/config`这个接口不但能更新connector还能创建,如果connector不存在的时候使它就会创建一个connector如果存在就去更新.
+
+debezium提供了诸多配置参数,上图例子中只是提供了常用的配置,详细配置参考[Debezium Connector for MySQL
+](https://debezium.io/docs/connectors/mysql/).
+
+connector创建成功之后,可以通过[http://localhost:8083/connectors/](http://localhost:8083/connectors/)查看已经创建个的connector.
+
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_connector_0.png?raw=true)
+
+同时你还可以通过[http://localhost:8083/connectors/order-center-connector/](http://localhost:8083/connectors/order-center-connector/)查看某一个connector的详细配置信息.
+
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_connector_1.png?raw=true)
+
+也可以通过[http://localhost:8083/connectors/order-center-connector/status](http://localhost:8083/connectors/order-center-connector/status)查看当前connector的详细状态,如果当前connector出现故障,也会在这里提示出来.
+
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_connector_2.png?raw=true)
+
+
+connector创建成功后,接下来应该测试debezium是否开始工作了,MySQL发生insert或者update 的时候有没有写入kafka.
+
+* debezium kafka topic消费
