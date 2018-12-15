@@ -14,31 +14,31 @@ import java.util.Date;
  **/
 public class ElasticSearchIndex implements Serializable {
     @ElasticSearchMappingFields({
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string", index = "not_analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES)
     })
     private String orderNumber;
     @ElasticSearchMappingFields({
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string", index = "not_analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES)
     })
     private Date orderDate;
     @ElasticSearchMappingFields({
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "date", index = "not_analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "date")
     })
     private String purchaser;
     @ElasticSearchMappingFields({
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string", index = "not_analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES)
     })
     private String purchaserName;
     @ElasticSearchMappingFields({
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string", index = "analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, index = "analyzed")
     })
     private String quantity;
     @ElasticSearchMappingFields({
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string", index = "not_analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES)
     })
     private String productId;
     @ElasticSearchMappingFields({
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "date", index = "not_analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "date")
     })
     private Date createDate;
 
