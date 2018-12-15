@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/list")
+@RequestMapping("/test")
 public class TestController {
 
     @Autowired
