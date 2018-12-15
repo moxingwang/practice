@@ -159,3 +159,29 @@ connector创建成功后,接下来应该测试debezium是否开始工作了,MySQ
 
 
 ## 常见问题
+* Unexpected exception while parsing statement alter table pay_cs_market_balance alter column  balance_amt set default 0 at line 1
+> https://blog.csdn.net/lzufeng/article/details/81488524
+
+
+* 如果配置无效
+> 1 检查表白名单
+> 2 检查database.server.id是否重复
+> 3 检查其他配置重复是否
+
+
+* 如何分词(version 2.X)
+> https://zhuanlan.zhihu.com/p/29183128
+> http://esuc.dev.rs.com:9200/_analyze?pretty&analyzer=keyword &text=SO5046240000014238
+
+* 消费者乱码
+> 保持写入消费使用的同一个序列化方式.
+
+* 数据库`date`,`datetime`,`timestamp`之类的字段,消费者收到少了8个小时或者多了8个小时
+> 这个问题主要是由于时区的问题,建议阅读官网文档[Temporal values without time zone
+](https://debezium.io/docs/connectors/mysql/)
+
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_debezium_7.png?raw=true)
+
+`解决办法`
+
+  建议数据都改成`timestamp`(因为携带了市区)类型然后再kafka消费的时候使用Date对象接收,转成Date对象时区就是本地的了,再写入es就是你想要的了.
