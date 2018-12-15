@@ -115,5 +115,5 @@ connector创建成功后,接下来应该测试debezium是否开始工作了,MySQ
 
   看到这样的结果说明debezium已经开始工作了.
 
-#### spring boot消费消息kafka消息并且写入elasticsearch中
+#### spring boot消费kafka消息并且写入elasticsearch中
   
