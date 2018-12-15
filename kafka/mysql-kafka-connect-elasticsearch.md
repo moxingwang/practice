@@ -117,7 +117,7 @@ connector创建成功后,接下来应该测试debezium是否开始工作了,MySQ
 
 #### spring boot消费kafka消息并且写入elasticsearch中
   
-* Demo代码已经在[https://github.com/m65536/practice/tree/master/search/elasticsearch](https://github.com/m65536/practice/tree/master/search/elasticsearch)全部实现.下载后配合上面安装好了的环境可以直接启动运行.
+* Demo代码已经在[https://github.com/m65536/practice/tree/master/search/elasticsearch](https://github.com/m65536/practice/tree/master/search/elasticsearch)全部实现.下载后配合上面安装好了的环境可以直接启动运行(当前版本使用的6.5,如果需要使用2.X,es客户端配置略有不同).
 
 * [Index Templates](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-templates.html#indices-templates)
 

@@ -1,6 +1,7 @@
 package top.moxingwang.elasticsearch.service;
 
 import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import top.moxingwang.elasticsearch.es.ElasticSearchIndex;
@@ -20,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public abstract class AbstractElasticSearchService {
     private static Logger logger = LoggerFactory.getLogger(AbstractElasticSearchService.class);
 
-    public abstract void index(String topic, ElasticSearchIndex beforeTable, ElasticSearchIndex afterTable);
+    public abstract void index(String topic, ElasticSearchIndex beforeTable, ElasticSearchIndex afterTable) throws JsonProcessingException;
 
     public static final String INDEX_TYPE = "type";
 
