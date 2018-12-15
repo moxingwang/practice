@@ -46,9 +46,9 @@ public class ElasticSearchService extends AbstractElasticSearchService {
             logger.info("更新数据{}", afterJson);
         }
 
-        IndexRequest indexRequest = new IndexRequest(indexName, INDEX_TYPE, afterTable.getId())
+        IndexRequest indexRequest = new IndexRequest(indexName, INDEX_TYPE, afterTable.getOrderNumber())
                 .source(afterJson);
-        UpdateRequest updateRequest = new UpdateRequest(indexName, INDEX_TYPE, afterTable.getId())
+        UpdateRequest updateRequest = new UpdateRequest(indexName, INDEX_TYPE, afterTable.getOrderNumber())
                 .doc(afterJson)
                 .upsert(indexRequest);
         ActionFuture<UpdateResponse> updateResponseActionFuture = transportClient.update(updateRequest);
