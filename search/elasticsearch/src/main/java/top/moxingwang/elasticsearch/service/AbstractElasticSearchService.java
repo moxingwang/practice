@@ -60,7 +60,7 @@ public abstract class AbstractElasticSearchService {
                     mapping.put(field.getName(), typeIndex);
 
                     typeIndex.put("type", elasticSearchMappingField.type());
-                    typeIndex.put("index", elasticSearchMappingField.index());
+//                    typeIndex.put("index", elasticSearchMappingField.index());
                 }
             }
         }

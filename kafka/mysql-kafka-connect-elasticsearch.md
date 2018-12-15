@@ -117,3 +117,31 @@ connector创建成功后,接下来应该测试debezium是否开始工作了,MySQ
 
 #### spring boot消费kafka消息并且写入elasticsearch中
   
+* Demo代码已经在[https://github.com/m65536/practice/tree/master/search/elasticsearch](https://github.com/m65536/practice/tree/master/search/elasticsearch)全部实现.下载后配合上面安装好了的环境可以直接启动运行.
+
+* [Index Templates](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-templates.html#indices-templates)
+
+  使用创建index之前可以创建index template,使用简单并且方便灵活.
+
+* 创建template
+
+  put http://localhost:9200/_template/{模板名称}
+```
+{
+  "template": "trade-order-sales",
+  "order": 0,
+  "mappings": {
+    "_default_": {
+      "_source": {
+        "enabled": true
+      }
+    },
+    "type": {
+      "properties":{"orderNumber":{"type":"text"},"quantity":{"type":"text"},"productId":{"type":"text"},"purchaser":{"type":"date"},"orderDate":{"type":"text"},"purchaserName":{"type":"text"},"createDate":{"type":"date"}}
+      
+     }
+  }
+}
+```
+![](https://github.com/m65536/resource/blob/master/image/kafka/local_debezium_2.png?raw=true)
+

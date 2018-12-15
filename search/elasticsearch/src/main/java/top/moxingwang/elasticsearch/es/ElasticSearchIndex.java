@@ -30,7 +30,7 @@ public class ElasticSearchIndex implements Serializable {
     })
     private String purchaserName;
     @ElasticSearchMappingFields({
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, index = "analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES)
     })
     private String quantity;
     @ElasticSearchMappingFields({

@@ -14,7 +14,8 @@ import java.lang.annotation.*;
 public @interface ElasticSearchMappingFields {
 
     ElasticSearchMappingField[] value() default {
-            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string", index = "not_analyzed")
+//            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string", index = "not_analyzed")
+            @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string")
     };
 
 }

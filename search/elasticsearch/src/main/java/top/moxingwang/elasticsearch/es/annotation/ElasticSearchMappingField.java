@@ -15,6 +15,6 @@ public @interface ElasticSearchMappingField {
 
     String type() default "text";
 
-    String index() default "not_analyzed";
+//    String index() default "not_analyzed";
 
 }
