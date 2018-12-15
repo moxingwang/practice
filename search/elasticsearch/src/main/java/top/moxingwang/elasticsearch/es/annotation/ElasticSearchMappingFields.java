@@ -15,8 +15,6 @@ public @interface ElasticSearchMappingFields {
 
     ElasticSearchMappingField[] value() default {
             @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES, type = "string", index = "not_analyzed")
-            , @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_SALES_REFUND, type = "string", index = "not_analyzed")
-            , @ElasticSearchMappingField(indexName = AbstractElasticSearchService.INDEX_JZ, type = "string", index = "not_analyzed")
     };
 
 }
