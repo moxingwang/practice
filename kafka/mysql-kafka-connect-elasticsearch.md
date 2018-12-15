@@ -18,3 +18,4 @@ docker run -it --rm --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=debezium -e
   
   这里给出同上docker的数据库和表结构，点击[msyql table inventory ddl](https://github.com/m65536/resource/blob/master/script/debezium/sql_ddl_0/inventory_ddl.sql)下载。
 
+#### zookeeper
