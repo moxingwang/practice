@@ -185,3 +185,5 @@ connector创建成功后,接下来应该测试debezium是否开始工作了,MySQ
 `解决办法`
 
   建议数据都改成`timestamp`(携带了时区)类型然后再kafka消费的时候使用Date对象接收,转成Date对象时区就是本地的了,再写入es就是你想要的了.
+  
+  
