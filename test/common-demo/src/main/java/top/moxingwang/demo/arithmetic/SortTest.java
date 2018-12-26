@@ -32,6 +32,11 @@ public class SortTest {
             bubbleSort(source);
             printArray(source);
         }
+        if (true) {
+            int[] source = getSource();
+            insertSort(source);
+            printArray(source);
+        }
 
     }
 
@@ -77,7 +82,15 @@ public class SortTest {
 
     //插入排序
     public void insertSort(int[] source) {
-
+        for (int i = 0; i < source.length; i++) {
+            int current = source[i];
+            int j = i - 1;
+            while (j>=0 && source[j]>current){
+                source[j+1]=source[j];
+                j--;
+            }
+            source[j+1]=current;
+        }
     }
 
     //选择排序
