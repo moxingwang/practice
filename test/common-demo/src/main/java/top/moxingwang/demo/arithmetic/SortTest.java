@@ -3,14 +3,17 @@ package top.moxingwang.demo.arithmetic;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.logging.Logger;
 
 /**
  * @description:
  * @author: MoXingwang 2018-12-25 16:00
  **/
 public class SortTest {
+    private static Logger logger = Logger.getGlobal();
+
     public void printArray(int[] source) {
-        System.out.println(Arrays.toString(source));
+        logger.info(Arrays.toString(source));
     }
 
     public int[] getSource() {
