@@ -75,6 +75,14 @@ public class SortTest {
         quickSort(source, i + 1, right);
     }
 
+    //插入排序
+    public void insertSort(int[] source) {
+
+    }
+
+    //选择排序
+
+
     public void swap(int[] source, int left, int right) {
         int temp = source[left];
         source[left] = source[right];
