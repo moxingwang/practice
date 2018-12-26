@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 /**
  * @description: 参考wikipedia
+ * 讲究指针和移动
  * @author: MoXingwang 2018-12-25 16:00
  **/
 public class SortTest {
