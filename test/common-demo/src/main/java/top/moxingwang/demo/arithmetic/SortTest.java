@@ -9,20 +9,44 @@ import java.util.Arrays;
  * @author: MoXingwang 2018-12-25 16:00
  **/
 public class SortTest {
-    int[] source = {6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
-
     public void printArray(int[] source) {
         System.out.println(Arrays.toString(source));
     }
 
-    @Test
-    public void testQuickSort() {
+    public int[] getSource() {
+        return new int[]{6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
+    }
 
-        quickSort(source, 0, source.length - 1);
-        printArray(source);
+    @Test
+    public void test() {
+        if (true) {
+            int[] source = getSource();
+            quickSort(source, 0, source.length - 1);
+            printArray(source);
+        }
+        if (true) {
+            int[] source = getSource();
+            bubbleSort(source);
+            printArray(source);
+        }
+
+    }
+
+    //冒泡排序
+    public void bubbleSort(int[] source) {
+        for (int i = 0; i < source.length; i++) {
+            for (int j = i; j < source.length - 1; j++) {
+                if (source[j + 1] < source[j]) {
+                    int temp = source[j];
+                    source[j] = source[j + 1];
+                    source[j + 1] = temp;
+                }
+            }
+        }
     }
 
 
+    //快速排序
     public void quickSort(int[] source, int left, int right) {
         if (left > right) {
             return;
