@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.logging.Logger;
 
 /**
- * @description:
+ * @description: 参考wikipedia
  * @author: MoXingwang 2018-12-25 16:00
  **/
 public class SortTest {
