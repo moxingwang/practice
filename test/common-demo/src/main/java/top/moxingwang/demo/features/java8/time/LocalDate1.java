@@ -29,13 +29,12 @@ public class LocalDate1 {
         DayOfWeek dayOfWeek = independenceDay.getDayOfWeek();
         System.out.println(dayOfWeek);    // FRIDAY
 
-        DateTimeFormatter germanFormatter =
-                DateTimeFormatter
-                        .ofLocalizedDate(FormatStyle.MEDIUM)
-                        .withLocale(Locale.GERMAN);
+//        DateTimeFormatter germanFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN);
+        DateTimeFormatter germanFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
 
-        LocalDate xmas = LocalDate.parse("24.12.2014", germanFormatter);
-        
+        LocalDate xmas = LocalDate.parse("2018-01-01", germanFormatter);
+
+
         System.out.println(xmas);   // 2014-12-24
 
 
