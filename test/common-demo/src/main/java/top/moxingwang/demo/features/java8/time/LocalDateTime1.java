@@ -39,6 +39,11 @@ public class LocalDateTime1 {
             System.out.println(now.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
         }
 
+        {
+            DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            LocalDateTime localDateTime = LocalDateTime.parse("2019-01-17 18:31:41",df);
+            System.out.println(localDateTime);
+        }
 
         /*DateTimeFormatter formatter =
                 DateTimeFormatter
