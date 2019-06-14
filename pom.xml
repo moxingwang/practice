@@ -18,14 +18,12 @@
 	</properties>
 
 	<modules>
-		<module>websocket</module>
 		<module>dubbo</module>
 		<module>test</module>
 		<module>docker</module>
 		<module>redis</module>
 		<module>kafka</module>
 		<module>jib</module>
-		<module>spring-cloud</module>
 		<module>mq</module>
 		<module>springboot-feature</module>
 		<module>search</module>
