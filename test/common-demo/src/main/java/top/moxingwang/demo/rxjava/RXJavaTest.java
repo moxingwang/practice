@@ -12,6 +12,7 @@ import io.reactivex.schedulers.Schedulers;
 public class RXJavaTest {
     public static void main(String[] args) {
         Observable<Integer> observable = Observable.just(1, 2, 3).subscribeOn(Schedulers.io());
+        System.out.println("主开始"+Thread.currentThread().getName());
 
         observable.subscribe(new Observer<Integer>() {
             @Override
@@ -21,9 +22,11 @@ public class RXJavaTest {
 
             @Override
             public void onNext(Integer integer) {
-                System.out.println("开始"+integer);
-                for (;;){
-
+                System.out.println("内部开始"+Thread.currentThread().getName() + integer);
+                try {
+                    Thread.sleep(111);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
 
@@ -34,9 +37,11 @@ public class RXJavaTest {
 
             @Override
             public void onComplete() {
+                System.out.println("onComplete"+Thread.currentThread().getName() );
 
             }
         });
+
 
         for (;;){
 
