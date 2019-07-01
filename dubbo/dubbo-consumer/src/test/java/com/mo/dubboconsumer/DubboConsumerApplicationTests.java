@@ -1,4 +1,4 @@
-package top.moxingwang.dubboconsumer;
+package com.mo.dubboconsumer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
