@@ -40,13 +40,26 @@
             <version>2.4.6</version>
         </dependency>
 
-<!--
         <dependency>
-            <groupId>org.elasticsearch.client</groupId>
-            <artifactId>transport</artifactId>
-            <version>5.6.13</version>
+            <groupId>com.hankcs</groupId>
+            <artifactId>hanlp</artifactId>
+            <version>portable-1.7.4</version>
         </dependency>
--->
+
+        <dependency>
+            <groupId>org.ansj</groupId>
+            <artifactId>ansj_seg</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+
+
+        <!--
+                <dependency>
+                    <groupId>org.elasticsearch.client</groupId>
+                    <artifactId>transport</artifactId>
+                    <version>5.6.13</version>
+                </dependency>
+        -->
 
 <!--
         <dependency>
