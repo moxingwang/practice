@@ -16,10 +16,10 @@ import javax.annotation.PostConstruct;
  **/
 @Service
 public class ApolloClient {
-    @Value("${batch}")
-    private int batch;
+//    @Value("${batch}")
+//    private int batch;
 
-    @PostConstruct
+   /* @PostConstruct
     public void init() {
         System.out.println("batch的值"+batch);
 
@@ -37,5 +37,5 @@ public class ApolloClient {
 
             }
         });
-    }
+    }*/
 }

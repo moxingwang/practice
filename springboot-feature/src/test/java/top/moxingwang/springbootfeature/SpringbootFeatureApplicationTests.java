@@ -6,10 +6,17 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import top.moxingwang.springbootfeature.jpa.OrderRepository;
+import top.moxingwang.springbootfeature.model.TxOrderEntity;
+
+import java.util.Optional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringbootFeatureApplicationTests {
+
+	@Autowired
+	private OrderRepository orderRepository;
 
 	@Test
 	public void contextLoads() {
@@ -20,10 +27,9 @@ public class SpringbootFeatureApplicationTests {
 
 	@Test
 	public void getPass() {
-		String name = encryptor.encrypt("userName");
-		String password = encryptor.encrypt("password");
-		System.out.println(name + "----------------");
-		System.out.println(password + "----------------");
 
+		Optional<TxOrderEntity>  s  = orderRepository.findById(1L);
+		TxOrderEntity ss = s.get();
+		System.out.println(1);
 	}
 }
