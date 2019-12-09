@@ -18,15 +18,15 @@
 	</properties>
 
 	<modules>
-		<module>dubbo</module>
+<!--		<module>dubbo</module>-->
 		<module>test</module>
-		<module>docker</module>
-		<module>redis</module>
-		<module>kafka</module>
-		<module>jib</module>
-		<module>mq</module>
-		<module>springboot-feature</module>
-		<module>search</module>
+<!--		<module>docker</module>-->
+<!--		<module>redis</module>-->
+<!--		<module>kafka</module>-->
+<!--		<module>jib</module>-->
+<!--		<module>mq</module>-->
+<!--		<module>springboot-feature</module>-->
+<!--		<module>search</module>-->
 	</modules>
 
 </project>
