@@ -18,7 +18,7 @@ public class MyClassLoader extends ClassLoader {
             inputStream = new FileInputStream(classFile);
             outputStream = new ByteArrayOutputStream();
 
-            int ch = 0;
+            int ch = -1;
             while ((ch = inputStream.read()) != -1) {
                 outputStream.write(ch);
             }
