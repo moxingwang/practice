@@ -35,6 +35,15 @@
             <version>2.2.7</version>
         </dependency>
 
+<!--
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>6.6.2</version>
+        </dependency>
+-->
+
+
 
     </dependencies>
 
