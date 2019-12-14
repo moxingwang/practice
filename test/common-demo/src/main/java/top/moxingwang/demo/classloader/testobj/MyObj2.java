@@ -35,4 +35,11 @@ public class MyObj2 {
         int i = 10;
         System.out.println(i++);
     }
+
+    public void testAdd2(){
+        int i = 10;
+        i++;
+        System.out.println(i);
+    }
+
 }
