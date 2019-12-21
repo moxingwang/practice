@@ -1,5 +1,7 @@
 package top.moxingwang.demo.classloader.testobj;
 
+import top.moxingwang.demo.classloader.statictest.MyObjStatic;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,10 @@ public class MyObj2 {
     public static final List list = new ArrayList(100);
 
     public static void main(String[] args) {
+
+        double c = 0.1;
+        System.out.println(c++);
+
         System.out.println(1);
         MyObj2 myObj2 = new MyObj2();
         myObj2.testAdd();
@@ -41,5 +47,26 @@ public class MyObj2 {
         i++;
         System.out.println(i);
     }
+
+    public void testArgs(String aa, Object b, List c) {
+        System.out.println(11111);
+    }
+
+
+    public void testAdd3(){
+        int i = 0;
+        while (i < 100) {
+            i++;
+            System.out.println(i);
+        }
+    }
+
+    public void testStatic(){
+        int a = 5;
+        int c = MyObjStatic.getInteger(a);
+        System.out.println(c);
+    }
+
+
 
 }

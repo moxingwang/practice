@@ -4,10 +4,13 @@ package top.moxingwang.demo.classloader.testobj;
  * @author moxingwang
  */
 public class MyObj1 {
-    public static int  a ;
+    public static final  int  a =0;
 
     static  {
-        a=1;
-        System.out.println("执行静态方法" + a);
+        System.out.println("执行静态方法" );
+    }
+
+    public static void getStatic(){
+        System.out.println("myobj1 getStatic");
     }
 }

@@ -14,6 +14,7 @@ public class MyClassLoaderTest {
 
         MyClassLoader loader1 = new MyClassLoader("C:\\Users\\xingwang.mo\\Desktop\\classes");
         Class<?> aClass = loader1.loadClass("top.moxingwang.demo.classloader.testobj.MyObj2", true);
+        System.out.println(aClass.getName());
         System.out.println("加载到"+aClass.hashCode());
         Field[] declaredFields = aClass.getDeclaredFields();
 //        Method[] methods = aClass.getDeclaredMethods();
