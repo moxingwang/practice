@@ -1,10 +1,13 @@
+/*
 package top.moxingwang.demo.password;
 
 import java.io.UnsupportedEncodingException;
 
+*/
 /**
  * Created by MoXingwang on 2017/8/26.
- */
+ *//*
+
 public class Base65 {
     // 加密
     public static String encode(String str) {
@@ -39,3 +42,4 @@ public class Base65 {
 
 
 }
+*/

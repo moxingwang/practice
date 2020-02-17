@@ -1,3 +1,4 @@
+/*
 package top.moxingwang.demo.password;
 
 import sun.misc.BASE64Decoder;
@@ -5,9 +6,11 @@ import sun.misc.BASE64Encoder;
 
 import java.io.UnsupportedEncodingException;
 
+*/
 /**
  * Created by MoXingwang on 2017/8/26.
- */
+ *//*
+
 public class Base64 {
     // 加密
     public static String encode(String str) {
@@ -40,3 +43,4 @@ public class Base64 {
         return result;
     }
 }
+*/

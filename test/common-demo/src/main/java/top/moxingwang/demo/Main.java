@@ -1,7 +1,5 @@
 package top.moxingwang.demo;
 
-import sun.misc.Unsafe;
-
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Main {
@@ -12,7 +10,6 @@ public class Main {
         try {
             reentrantLock.lock();
             //do something
-
 
 
             Thread t1 = new Thread(() -> {
@@ -50,8 +47,6 @@ public class Main {
         } finally {
             reentrantLock.unlock();
         }
-
-
 
 
         System.out.println("测试完成");

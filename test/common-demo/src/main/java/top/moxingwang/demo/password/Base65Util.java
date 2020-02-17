@@ -17,8 +17,8 @@ public class Base65Util implements Base65Interface{
 
         System.out.println("-------------------------------------------------------");
 
-        System.out.println("base65 encode: " + Base65.encode(s));
-        System.out.println("base65 encode: " + Base65.decode(Base65.encode(s)));
+//        System.out.println("base65 encode: " + Base65.encode(s));
+//        System.out.println("base65 encode: " + Base65.decode(Base65.encode(s)));
 
         //打乱ASCII字符
         System.out.println(new Base65Util().getKey());

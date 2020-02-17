@@ -1,3 +1,4 @@
+/*
 package top.moxingwang.demo.password;
 
 import sun.misc.CEFormatException;
@@ -8,9 +9,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PushbackInputStream;
 
+*/
 /**
  * Created by MoXingwang on 2017/8/26.
- */
+ *//*
+
 public class BASE65Decoder extends CharacterDecoder implements Base65Interface {
 
     private static final byte[] pem_convert_array = new byte[256];
@@ -96,3 +99,4 @@ public class BASE65Decoder extends CharacterDecoder implements Base65Interface {
 
     }
 }
+*/
