@@ -13,14 +13,9 @@ public class MyInvocationHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-
-        DogUtil du = new DogUtil();
-        // 调用 GunDog 中的 info() 或者 run() 方法前
-        du.method1();
-        // 用反射去调用 Dog class 中的方法
+        System.out.println("方法调用前");
         Object result = method.invoke(target, objects);// 注释一
-        // 调用 GunDog 中的 info() 或者 run() 方法后
-        du.method2();
+        System.out.println("方法调用后");
         return result;
 
     }
