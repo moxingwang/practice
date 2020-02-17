@@ -6,19 +6,6 @@
     <groupId>top.moxingwang</groupId>
     <artifactId>common-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
     <name>common-demo</name>
     <description>common-demo</description>
 
@@ -35,16 +22,38 @@
             <version>2.2.7</version>
         </dependency>
 
-<!--
         <dependency>
-            <groupId>org.elasticsearch</groupId>
-            <artifactId>elasticsearch</artifactId>
-            <version>6.6.2</version>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.13</version>
         </dependency>
--->
-
-
-
     </dependencies>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.11</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>       <!-- use this goal to weave all your main classes -->
+                            <goal>test-compile</goal>  <!-- use this goal to weave all your test classes -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
 </project>

@@ -1,5 +1,9 @@
 package top.moxingwang.demo.proyx;
 
+/**
+ * - [深入理解 Java 之动态代理实现机制](https://allenwu.itscoder.com/use-of-proxy)
+ * - [深入理解 Java 之动态代理实现机制](https://allenwu.itscoder.com/use-of-proxy)
+ */
 public class TestProxy {
     public static void main(String[] args) throws Exception {
         // 实例化一个被代理对象
